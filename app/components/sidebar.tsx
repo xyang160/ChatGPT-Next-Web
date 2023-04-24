@@ -110,36 +110,36 @@ export function SideBar(props: { className?: string }) {
         <ChatList narrow={shouldNarrow} />
       </div>
 
-      {/*<div className={styles["sidebar-tail"]}>*/}
-      {/*  <div className={styles["sidebar-actions"]}>*/}
-      {/*    <div className={styles["sidebar-action"] + " " + styles.mobile}>*/}
-      {/*      <IconButton*/}
-      {/*        icon={<CloseIcon />}*/}
-      {/*        onClick={chatStore.deleteSession}*/}
-      {/*      />*/}
-      {/*    </div>*/}
-      {/*    <div className={styles["sidebar-action"]}>*/}
-      {/*      <Link to={Path.Settings}>*/}
-      {/*        <IconButton icon={<SettingsIcon />} shadow />*/}
-      {/*      </Link>*/}
-      {/*    </div>*/}
-      {/*    <div className={styles["sidebar-action"]}>*/}
-      {/*      <a href={REPO_URL} target="_blank">*/}
-      {/*        <IconButton icon={<GithubIcon />} shadow />*/}
-      {/*      </a>*/}
-      {/*    </div>*/}
-      {/*  </div>*/}
-      {/*  <div>*/}
-      {/*    <IconButton*/}
-      {/*      icon={<AddIcon />}*/}
-      {/*      text={shouldNarrow ? undefined : Locale.Home.NewChat}*/}
-      {/*      onClick={() => {*/}
-      {/*        chatStore.newSession();*/}
-      {/*      }}*/}
-      {/*      shadow*/}
-      {/*    />*/}
-      {/*  </div>*/}
-      {/*</div>*/}
+      <div className={styles["sidebar-tail"]}>
+        <div className={styles["sidebar-actions"]}>
+          <div className={styles["sidebar-action"] + " " + styles.mobile}>
+            <IconButton
+              icon={<CloseIcon />}
+              onClick={chatStore.deleteSession}
+            />
+          </div>
+          <div className={styles["sidebar-action"]}>
+            <Link to={Path.Settings}>
+              <IconButton icon={<SettingsIcon />} shadow />
+            </Link>
+          </div>
+          {/*<div className={styles["sidebar-action"]}>*/}
+          {/*  <a href={REPO_URL} target="_blank">*/}
+          {/*    <IconButton icon={<GithubIcon />} shadow />*/}
+          {/*  </a>*/}
+          {/*</div>*/}
+        </div>
+        <div>
+          <IconButton
+            icon={<AddIcon />}
+            text={shouldNarrow ? undefined : Locale.Home.NewChat}
+            onClick={() => {
+              chatStore.newSession();
+            }}
+            shadow
+          />
+        </div>
+      </div>
 
       <div
         className={styles["sidebar-drag"]}
