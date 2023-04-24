@@ -468,19 +468,19 @@ export function Settings() {
             <></>
           )}
 
-          <SettingItem
-            title={Locale.Settings.Token.Title}
-            subTitle={Locale.Settings.Token.SubTitle}
-          >
-            <PasswordInput
-              value={accessStore.token}
-              type="text"
-              placeholder={Locale.Settings.Token.Placeholder}
-              onChange={(e) => {
-                accessStore.updateToken(e.currentTarget.value);
-              }}
-            />
-          </SettingItem>
+          {/*<SettingItem*/}
+          {/*  title={Locale.Settings.Token.Title}*/}
+          {/*  subTitle={Locale.Settings.Token.SubTitle}*/}
+          {/*>*/}
+          {/*  <PasswordInput*/}
+          {/*    value={accessStore.token}*/}
+          {/*    type="text"*/}
+          {/*    placeholder={Locale.Settings.Token.Placeholder}*/}
+          {/*    onChange={(e) => {*/}
+          {/*      accessStore.updateToken(e.currentTarget.value);*/}
+          {/*    }}*/}
+          {/*  />*/}
+          {/*</SettingItem>*/}
 
           {/*<SettingItem*/}
           {/*  title={Locale.Settings.Usage.Title}*/}
@@ -506,43 +506,43 @@ export function Settings() {
           {/*  )}*/}
           {/*</SettingItem>*/}
 
-          <SettingItem
-            title={Locale.Settings.HistoryCount.Title}
-            subTitle={Locale.Settings.HistoryCount.SubTitle}
-          >
-            <InputRange
-              title={config.historyMessageCount.toString()}
-              value={config.historyMessageCount}
-              min="0"
-              max="25"
-              step="1"
-              onChange={(e) =>
-                updateConfig(
-                  (config) =>
-                    (config.historyMessageCount = e.target.valueAsNumber),
-                )
-              }
-            ></InputRange>
-          </SettingItem>
+          {/*<SettingItem*/}
+          {/*  title={Locale.Settings.HistoryCount.Title}*/}
+          {/*  subTitle={Locale.Settings.HistoryCount.SubTitle}*/}
+          {/*>*/}
+          {/*  <InputRange*/}
+          {/*    title={config.historyMessageCount.toString()}*/}
+          {/*    value={config.historyMessageCount}*/}
+          {/*    min="0"*/}
+          {/*    max="25"*/}
+          {/*    step="1"*/}
+          {/*    onChange={(e) =>*/}
+          {/*      updateConfig(*/}
+          {/*        (config) =>*/}
+          {/*          (config.historyMessageCount = e.target.valueAsNumber),*/}
+          {/*      )*/}
+          {/*    }*/}
+          {/*  ></InputRange>*/}
+          {/*</SettingItem>*/}
 
-          <SettingItem
-            title={Locale.Settings.CompressThreshold.Title}
-            subTitle={Locale.Settings.CompressThreshold.SubTitle}
-          >
-            <input
-              type="number"
-              min={500}
-              max={4000}
-              value={config.compressMessageLengthThreshold}
-              onChange={(e) =>
-                updateConfig(
-                  (config) =>
-                    (config.compressMessageLengthThreshold =
-                      e.currentTarget.valueAsNumber),
-                )
-              }
-            ></input>
-          </SettingItem>
+          {/*<SettingItem*/}
+          {/*  title={Locale.Settings.CompressThreshold.Title}*/}
+          {/*  subTitle={Locale.Settings.CompressThreshold.SubTitle}*/}
+          {/*>*/}
+          {/*  <input*/}
+          {/*    type="number"*/}
+          {/*    min={500}*/}
+          {/*    max={4000}*/}
+          {/*    value={config.compressMessageLengthThreshold}*/}
+          {/*    onChange={(e) =>*/}
+          {/*      updateConfig(*/}
+          {/*        (config) =>*/}
+          {/*          (config.compressMessageLengthThreshold =*/}
+          {/*            e.currentTarget.valueAsNumber),*/}
+          {/*      )*/}
+          {/*    }*/}
+          {/*  ></input>*/}
+          {/*</SettingItem>*/}
         </List>
 
         <List>
@@ -617,26 +617,26 @@ export function Settings() {
               }}
             ></InputRange>
           </SettingItem>
-          <SettingItem
-            title={Locale.Settings.MaxTokens.Title}
-            subTitle={Locale.Settings.MaxTokens.SubTitle}
-          >
-            <input
-              type="number"
-              min={100}
-              max={32000}
-              value={config.modelConfig.max_tokens}
-              onChange={(e) =>
-                updateConfig(
-                  (config) =>
-                    (config.modelConfig.max_tokens =
-                      ModalConfigValidator.max_tokens(
-                        e.currentTarget.valueAsNumber,
-                      )),
-                )
-              }
-            ></input>
-          </SettingItem>
+          {/*<SettingItem*/}
+          {/*  title={Locale.Settings.MaxTokens.Title}*/}
+          {/*  subTitle={Locale.Settings.MaxTokens.SubTitle}*/}
+          {/*>*/}
+          {/*  <input*/}
+          {/*    type="number"*/}
+          {/*    min={100}*/}
+          {/*    max={32000}*/}
+          {/*    value={config.modelConfig.max_tokens}*/}
+          {/*    onChange={(e) =>*/}
+          {/*      updateConfig(*/}
+          {/*        (config) =>*/}
+          {/*          (config.modelConfig.max_tokens =*/}
+          {/*            ModalConfigValidator.max_tokens(*/}
+          {/*              e.currentTarget.valueAsNumber,*/}
+          {/*            )),*/}
+          {/*      )*/}
+          {/*    }*/}
+          {/*  ></input>*/}
+          {/*</SettingItem>*/}
           <SettingItem
             title={Locale.Settings.PresencePenlty.Title}
             subTitle={Locale.Settings.PresencePenlty.SubTitle}
