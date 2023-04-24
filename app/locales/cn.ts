@@ -124,15 +124,15 @@ const cn = {
       SubTitle: "使用自己的 Key 可绕过密码访问限制",
       Placeholder: "OpenAI API Key",
     },
-    // Usage: {
-    //   Title: "余额查询",
-    //   SubTitle(used: any, total: any) {
-    //     return `本月已使用 $${used}，订阅总额 $${total}`;
-    //   },
-    //   IsChecking: "正在检查…",
-    //   Check: "重新检查",
-    //   NoAccess: "输入 API Key 或访问密码查看余额",
-    // },
+    Usage: {
+      Title: "余额查询",
+      SubTitle(used: any, total: any) {
+        return `本月已使用 $${used}，订阅总额 $${total}`;
+      },
+      IsChecking: "正在检查…",
+      Check: "重新检查",
+      NoAccess: "输入 API Key 或访问密码查看余额",
+    },
     AccessCode: {
       Title: "访问密码",
       SubTitle: "已开启加密访问",
@@ -143,10 +143,10 @@ const cn = {
       Title: "随机性 (temperature)",
       SubTitle: "值越大，回复越随机，大于 1 的值可能会导致乱码",
     },
-    // MaxTokens: {
-    //   Title: "单次回复限制 (max_tokens)",
-    //   SubTitle: "单次交互所用的最大 Token 数",
-    // },
+    MaxTokens: {
+      Title: "单次回复限制 (max_tokens)",
+      SubTitle: "单次交互所用的最大 Token 数",
+    },
     PresencePenlty: {
       Title: "话题新鲜度 (presence_penalty)",
       SubTitle: "值越大，越有可能扩展到新话题",
