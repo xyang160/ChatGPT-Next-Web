@@ -3,7 +3,8 @@ import { SubmitKey } from "../store/config";
 const cn = {
   WIP: "该功能仍在开发中……",
   Error: {
-    Unauthorized: "现在是未授权状态，请点击左下角设置按钮输入访问密码。",
+    Unauthorized:
+      "现在是未授权状态，请点击左下角设置按钮输入访问密码。如您没有密码，请访问 https://smart-1251030455.cos.ap-shanghai.myqcloud.com/smart.jpg ，用微信扫码购买，购买时请输入邮箱。",
   },
   ChatItem: {
     ChatItemCount: (count: number) => `${count} 条对话`,
