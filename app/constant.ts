@@ -71,10 +71,6 @@ export const DEFAULT_MODELS = [
     available: true,
   },
   {
-    name: "cow_gpt_turbo",
-    available: true,
-  },
-  {
     name: "gpt-4",
     available: true,
   },
