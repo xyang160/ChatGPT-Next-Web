@@ -7,7 +7,8 @@ export const RELEASE_URL = `${REPO_URL}/releases`;
 export const FETCH_COMMIT_URL = `https://api.github.com/repos/${OWNER}/${REPO}/commits?per_page=1`;
 export const FETCH_TAG_URL = `https://api.github.com/repos/${OWNER}/${REPO}/tags?per_page=1`;
 export const RUNTIME_CONFIG_DOM = "danger-runtime-config";
-export const DEFAULT_API_HOST = "https://chatgpt1.nextweb.fun/api/proxy";
+// export const DEFAULT_API_HOST = "https://chatgpt1.nextweb.fun/api/proxy";
+export const DEFAULT_API_HOST = "http://localhost:9906/api/openai";
 
 export enum Path {
   Home = "/",
@@ -64,6 +65,10 @@ Current model: {{model}}
 Current time: {{time}}`;
 
 export const DEFAULT_MODELS = [
+  {
+    name: "azure",
+    available: true,
+  },
   {
     name: "cow_gpt_turbo",
     available: true,

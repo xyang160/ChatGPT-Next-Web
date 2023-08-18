@@ -312,7 +312,7 @@ export const useChatStore = create<ChatStore>()(
         // make request
         api.llm.chat({
           messages: sendMessages,
-          config: { ...modelConfig, stream: true },
+          config: { ...modelConfig, stream: false },
           onUpdate(message) {
             botMessage.streaming = true;
             if (message) {
@@ -553,7 +553,7 @@ export const useChatStore = create<ChatStore>()(
                 date: "",
               }),
             ),
-            config: { ...modelConfig, stream: true },
+            config: { ...modelConfig, stream: false },
             onUpdate(message) {
               session.memoryPrompt = message;
             },
