@@ -76,6 +76,9 @@ export class ChatGPTApi implements LLMApi {
 
     try {
       const chatPath = this.path(OpenaiPath.ChatPath);
+
+      console.log("[Request openai chat] chatPath: ", chatPath);
+
       const chatPayload = {
         method: "POST",
         body: JSON.stringify(requestPayload),
@@ -171,11 +174,38 @@ export class ChatGPTApi implements LLMApi {
         });
       } else {
         const res = await fetch(chatPath, chatPayload);
+
+        console.log("[Request] fetch(chatPath, chatPayload)", res);
         clearTimeout(requestTimeoutId);
 
         const resJson = await res.json();
+
+        console.log("[Request] resJson", resJson);
+        console.log("[Request] res.status", res.status);
+
+        if (
+          !res.ok ||
+          !res.headers
+            .get("content-type")
+            ?.startsWith(EventStreamContentType) ||
+          res.status !== 200
+        ) {
+          if (res.status === 401) {
+            let extraInfo = prettyObject(resJson);
+            // options.onFinish(Locale.Error.Unauthorized.toString());
+            options.onFinish(extraInfo);
+            // throw new Error(Locale.Error.Unauthorized);
+          }
+        }
+
         const message = this.extractMessage(resJson);
-        options.onFinish(message);
+        console.log("[Request] message", message);
+        if (message) {
+          options.onFinish(message);
+        } else {
+          let extraInfo = prettyObject(resJson);
+          options.onFinish(extraInfo);
+        }
       }
     } catch (e) {
       console.log("[Request] failed to make a chat request", e);
