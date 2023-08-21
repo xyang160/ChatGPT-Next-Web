@@ -39,12 +39,17 @@ export function auth(req: NextRequest) {
   console.log("[User IP] ", getIP(req));
   console.log("[Time] ", new Date().toLocaleString());
 
-  if (serverConfig.needCode && !serverConfig.codes.has(hashedCode) && !token) {
-    return {
-      error: true,
-      msg: !accessCode ? "empty access code" : "wrong access code",
-    };
-  }
+  // console.log("[serverConfig.needCode] ", serverConfig.needCode);
+  // console.log("[!serverConfig.codes.has(hashedCode)] ", !serverConfig.codes.has(hashedCode));
+  // console.log("[!token] ", !token);
+
+  // if (serverConfig.needCode && !serverConfig.codes.has(hashedCode) && !token) {
+  // if (serverConfig.needCode && !token) {
+  //   return {
+  //     error: true,
+  //     msg: !accessCode ? "empty access code" : "wrong access code",
+  //   };
+  // }
 
   // if user does not provide an api key, inject system api key
   if (!token) {
