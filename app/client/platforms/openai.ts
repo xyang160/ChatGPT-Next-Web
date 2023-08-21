@@ -195,7 +195,9 @@ export class ChatGPTApi implements LLMApi {
           res.status !== 200
         ) {
           if (res.status === 401) {
-            let extraInfo = prettyObject(resJson);
+            let extraInfo = prettyObject(resJson.msg);
+            // console.log("[extraInfo.resJson]", resJson)
+            // console.log("[resJson.msg]", resJson.msg)
             // options.onFinish(Locale.Error.Unauthorized.toString());
             options.onFinish(extraInfo);
             // throw new Error(Locale.Error.Unauthorized);
@@ -207,7 +209,7 @@ export class ChatGPTApi implements LLMApi {
         if (message) {
           options.onFinish(message);
         } else {
-          let extraInfo = prettyObject(resJson);
+          let extraInfo = prettyObject(resJson.msg);
           options.onFinish(extraInfo);
         }
       }
