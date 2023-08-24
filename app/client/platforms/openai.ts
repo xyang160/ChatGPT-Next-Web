@@ -177,8 +177,13 @@ export class ChatGPTApi implements LLMApi {
           openWhenHidden: true,
         });
       } else {
-        const res = await fetch(chatPath, chatPayload);
-
+        // const res = await fetch(chatPath, chatPayload);
+        const res = (await Promise.race([
+          fetch(chatPath, chatPayload),
+          new Promise((_, reject) =>
+            setTimeout(() => reject(new Error("请求超时")), 60000),
+          ),
+        ])) as Response;
         console.log("[Request] fetch(chatPath, chatPayload)", res);
         clearTimeout(requestTimeoutId);
 
