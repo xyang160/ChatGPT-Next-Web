@@ -312,7 +312,7 @@ export const useChatStore = create<ChatStore>()(
         // make request
         api.llm.chat({
           messages: sendMessages,
-          config: { ...modelConfig, stream: false },
+          config: { ...modelConfig, stream: true },
           onUpdate(message) {
             botMessage.streaming = true;
             if (message) {
@@ -555,7 +555,7 @@ export const useChatStore = create<ChatStore>()(
                 date: "",
               }),
             ),
-            config: { ...modelConfig, stream: true, model: "gpt-3.5-turbo" },
+            config: { ...modelConfig, stream: true, model: "azure" },
             onUpdate(message) {
               session.memoryPrompt = message;
             },
