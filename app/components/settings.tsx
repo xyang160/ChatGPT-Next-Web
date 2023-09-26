@@ -482,41 +482,41 @@ function SyncItems() {
   return (
     <>
       <List>
-        <ListItem
-          title={Locale.Settings.Sync.CloudState}
-          subTitle={
-            syncStore.lastProvider
-              ? `${new Date(syncStore.lastSyncTime).toLocaleString()} [${
-                  syncStore.lastProvider
-                }]`
-              : Locale.Settings.Sync.NotSyncYet
-          }
-        >
-          <div style={{ display: "flex" }}>
-            <IconButton
-              icon={<ConfigIcon />}
-              text={Locale.UI.Config}
-              onClick={() => {
-                setShowSyncConfigModal(true);
-              }}
-            />
-            {couldSync && (
-              <IconButton
-                icon={<ResetIcon />}
-                text={Locale.UI.Sync}
-                onClick={async () => {
-                  try {
-                    await syncStore.sync();
-                    showToast(Locale.Settings.Sync.Success);
-                  } catch (e) {
-                    showToast(Locale.Settings.Sync.Fail);
-                    console.error("[Sync]", e);
-                  }
-                }}
-              />
-            )}
-          </div>
-        </ListItem>
+        {/*<ListItem*/}
+        {/*  title={Locale.Settings.Sync.CloudState}*/}
+        {/*  subTitle={*/}
+        {/*    syncStore.lastProvider*/}
+        {/*      ? `${new Date(syncStore.lastSyncTime).toLocaleString()} [${*/}
+        {/*          syncStore.lastProvider*/}
+        {/*        }]`*/}
+        {/*      : Locale.Settings.Sync.NotSyncYet*/}
+        {/*  }*/}
+        {/*>*/}
+        {/*  <div style={{ display: "flex" }}>*/}
+        {/*    <IconButton*/}
+        {/*      icon={<ConfigIcon />}*/}
+        {/*      text={Locale.UI.Config}*/}
+        {/*      onClick={() => {*/}
+        {/*        setShowSyncConfigModal(true);*/}
+        {/*      }}*/}
+        {/*    />*/}
+        {/*    {couldSync && (*/}
+        {/*      <IconButton*/}
+        {/*        icon={<ResetIcon />}*/}
+        {/*        text={Locale.UI.Sync}*/}
+        {/*        onClick={async () => {*/}
+        {/*          try {*/}
+        {/*            await syncStore.sync();*/}
+        {/*            showToast(Locale.Settings.Sync.Success);*/}
+        {/*          } catch (e) {*/}
+        {/*            showToast(Locale.Settings.Sync.Fail);*/}
+        {/*            console.error("[Sync]", e);*/}
+        {/*          }*/}
+        {/*        }}*/}
+        {/*      />*/}
+        {/*    )}*/}
+        {/*  </div>*/}
+        {/*</ListItem>*/}
 
         <ListItem
           title={Locale.Settings.Sync.LocalState}
@@ -670,30 +670,30 @@ export function Settings() {
             </Popover>
           </ListItem>
 
-          <ListItem
-            title={Locale.Settings.Update.Version(currentVersion ?? "unknown")}
-            subTitle={
-              checkingUpdate
-                ? Locale.Settings.Update.IsChecking
-                : hasNewVersion
-                ? Locale.Settings.Update.FoundUpdate(remoteId ?? "ERROR")
-                : Locale.Settings.Update.IsLatest
-            }
-          >
-            {checkingUpdate ? (
-              <LoadingIcon />
-            ) : hasNewVersion ? (
-              <Link href={updateUrl} target="_blank" className="link">
-                {Locale.Settings.Update.GoToUpdate}
-              </Link>
-            ) : (
-              <IconButton
-                icon={<ResetIcon></ResetIcon>}
-                text={Locale.Settings.Update.CheckUpdate}
-                onClick={() => checkUpdate(true)}
-              />
-            )}
-          </ListItem>
+          {/*<ListItem*/}
+          {/*  title={Locale.Settings.Update.Version(currentVersion ?? "unknown")}*/}
+          {/*  subTitle={*/}
+          {/*    checkingUpdate*/}
+          {/*      ? Locale.Settings.Update.IsChecking*/}
+          {/*      : hasNewVersion*/}
+          {/*      ? Locale.Settings.Update.FoundUpdate(remoteId ?? "ERROR")*/}
+          {/*      : Locale.Settings.Update.IsLatest*/}
+          {/*  }*/}
+          {/*>*/}
+          {/*  {checkingUpdate ? (*/}
+          {/*    <LoadingIcon />*/}
+          {/*  ) : hasNewVersion ? (*/}
+          {/*    <Link href={updateUrl} target="_blank" className="link">*/}
+          {/*      {Locale.Settings.Update.GoToUpdate}*/}
+          {/*    </Link>*/}
+          {/*  ) : (*/}
+          {/*    <IconButton*/}
+          {/*      icon={<ResetIcon></ResetIcon>}*/}
+          {/*      text={Locale.Settings.Update.CheckUpdate}*/}
+          {/*      onClick={() => checkUpdate(true)}*/}
+          {/*    />*/}
+          {/*  )}*/}
+          {/*</ListItem>*/}
 
           <ListItem title={Locale.Settings.SendKey}>
             <Select
@@ -942,21 +942,21 @@ export function Settings() {
             </ListItem>
           ) : null}
 
-          <ListItem
-            title={Locale.Settings.CustomModel.Title}
-            subTitle={Locale.Settings.CustomModel.SubTitle}
-          >
-            <input
-              type="text"
-              value={config.customModels}
-              placeholder="model1,model2,model3"
-              onChange={(e) =>
-                config.update(
-                  (config) => (config.customModels = e.currentTarget.value),
-                )
-              }
-            ></input>
-          </ListItem>
+          {/*<ListItem*/}
+          {/*  title={Locale.Settings.CustomModel.Title}*/}
+          {/*  subTitle={Locale.Settings.CustomModel.SubTitle}*/}
+          {/*>*/}
+          {/*  <input*/}
+          {/*    type="text"*/}
+          {/*    value={config.customModels}*/}
+          {/*    placeholder="model1,model2,model3"*/}
+          {/*    onChange={(e) =>*/}
+          {/*      config.update(*/}
+          {/*        (config) => (config.customModels = e.currentTarget.value),*/}
+          {/*      )*/}
+          {/*    }*/}
+          {/*  ></input>*/}
+          {/*</ListItem>*/}
         </List>
 
         <List>
