@@ -73,7 +73,7 @@ Knowledge cutoff: 2021-09
 Current model: {{model}}
 Current time: {{time}}`;
 
-export const SUMMARIZE_MODEL = "gpt-3.5-turbo";
+export const SUMMARIZE_MODEL = "gpt-4";
 
 export const DEFAULT_MODELS = [
   {
@@ -81,45 +81,57 @@ export const DEFAULT_MODELS = [
     available: true,
   },
   {
-    name: "gpt-4-0314",
-    available: true,
-  },
-  {
-    name: "gpt-4-0613",
-    available: true,
-  },
-  {
     name: "gpt-4-32k",
     available: true,
   },
   {
-    name: "gpt-4-32k-0314",
+    name: "gpt-35-turbo",
     available: true,
   },
   {
-    name: "gpt-4-32k-0613",
+    name: "gpt-35-turbo-16k",
     available: true,
   },
-  {
-    name: "gpt-3.5-turbo",
-    available: true,
-  },
-  {
-    name: "gpt-3.5-turbo-0301",
-    available: true,
-  },
-  {
-    name: "gpt-3.5-turbo-0613",
-    available: true,
-  },
-  {
-    name: "gpt-3.5-turbo-16k",
-    available: true,
-  },
-  {
-    name: "gpt-3.5-turbo-16k-0613",
-    available: true,
-  },
+  // {
+  //   name: "gpt-4-0314",
+  //   available: true,
+  // },
+  // {
+  //   name: "gpt-4-0613",
+  //   available: true,
+  // },
+  // {
+  //   name: "gpt-4-32k",
+  //   available: true,
+  // },
+  // {
+  //   name: "gpt-4-32k-0314",
+  //   available: true,
+  // },
+  // {
+  //   name: "gpt-4-32k-0613",
+  //   available: true,
+  // },
+  // {
+  //   name: "gpt-3.5-turbo",
+  //   available: true,
+  // },
+  // {
+  //   name: "gpt-3.5-turbo-0301",
+  //   available: true,
+  // },
+  // {
+  //   name: "gpt-3.5-turbo-0613",
+  //   available: true,
+  // },
+  // {
+  //   name: "gpt-3.5-turbo-16k",
+  //   available: true,
+  // },
+  // {
+  //   name: "gpt-3.5-turbo-16k-0613",
+  //   available: true,
+  // },
 ] as const;
 
 export const CHAT_PAGE_SIZE = 15;
